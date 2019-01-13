@@ -1,0 +1,14 @@
+<head>
+<link href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" rel="stylesheet"></link>
+</head>
+
+<body>
+  <div id="zinogreApp"></div>
+
+  <!-- Inject flask variables -->
+<script>var user_info_name = "{{ user_info['preferred_username'] }}";</script>
+<script>var user_info_id = "{{ user_info['sub'] }}";</script>
+
+  <!-- Attach React components -->
+  <script type="text/javascript" src="{{ url_for('static', filename='bundle.js') }}"></script>
+</body>
