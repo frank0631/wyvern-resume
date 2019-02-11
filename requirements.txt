@@ -8,3 +8,7 @@ Flask-Script==2.0.6
 Flask-SQLAlchemy==2.3.2
 SQLAlchemy==1.2.15
 PyMySQL==0.9.3
+spacy==2.0.18
+pdfminer.six==20181108
+beautifulsoup4==4.7.1
+en-core-web-sm==2.0.0
