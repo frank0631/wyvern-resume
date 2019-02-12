@@ -12,3 +12,6 @@ spacy==2.0.18
 pdfminer.six==20181108
 beautifulsoup4==4.7.1
 en-core-web-sm==2.0.0
+flask-marshmallow==0.9.0
+marshmallow==2.18.0
+marshmallow-sqlalchemy==0.16.0
