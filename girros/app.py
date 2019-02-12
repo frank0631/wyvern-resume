@@ -6,7 +6,7 @@ from flask_login import login_required
 from flask_oidc import OpenIDConnect
 from flask_sqlalchemy import SQLAlchemy
 
-from girros import auth, routes, resumes
+from girros import auth, routes, resumes_data, resumes_logic
 
 def create_app():
     config_name = os.environ.get('FLASK_CONFIG', 'development')
@@ -18,12 +18,12 @@ def create_app():
     login_manager.init_app(app)
     auth.oidc.init_app(app)
     db = SQLAlchemy(app)
-    resumes.db = db
-    resumes.db.create_all()
+    resumes_data.db = db
+    resumes_data.db.create_all()
 
     app.register_blueprint(auth.girros_auth)
     app.register_blueprint(routes.girros_general)
-    app.register_blueprint(resumes.girros_resume)
+    app.register_blueprint(resumes_data.girros_resume_data)
+    app.register_blueprint(resumes_logic.girros_resume_logic)
     
-
     return app
