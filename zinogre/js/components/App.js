@@ -1,26 +1,24 @@
 import Hello from "./Hello";
 import Resume from "./Resume";
+import Analytics from "./Analytics";
+import Search from "./Search";
+import styles from '../styles/app-stylesheet.css';
 
 import React from "react";
 import ReactDOM from "react-dom";
 import {Route, Link} from "react-router-dom";
 
-const Index = () => (
-	<div>
-		<h2> Home </h2>
-		<Hello username={user_info_name} />
-	</div>
-);
-const ResumePage = () => (
-	<div>
-		<h2> Resume </h2>
-		<Resume userid={user_info_id} />
-	</div>
-);
-
-//const Index = () => <h2>Home</h2>;
+const Index = () => ( 
+		<div>
+			<Hello username={user_info_name} userid={user_info_id}  />
+		</div> 
+	);
 const About = () => <h2> About </h2>;
-const Users = () => <h2> Users </h2>;
+
+const ResumePage = () => <Resume userid={user_info_id} />;
+const AnalyticsPage = () => <Analytics username={user_info_name}/>;
+const SearchPage = () => <Search username={user_info_name}/>;
+
 
 const App = () => (
 	<div>
@@ -33,17 +31,21 @@ const App = () => (
 					<Link to="/about/"> About </Link>
 				</li>
 				<li>
-					<Link to="/users/"> Users </Link>
+					<Link to="/resume/"> Resume </Link>
 				</li>
 				<li>
-					<Link to="/resume/"> Resume </Link>
+					<Link to="/analytics/"> Analytics </Link>
+				</li>
+				<li>
+					<Link to="/search/"> Search </Link>
 				</li>
 			</ul>
 		</nav>
 		<Route path="/" exact component={Index} />
 		<Route path="/about/" component={About} />
-		<Route path="/users/" component={Users} />
 		<Route path="/resume/" component={ResumePage} />
+		<Route path="/analytics/" component={AnalyticsPage} />
+		<Route path="/search/" component={SearchPage} />
 	</div>
 );
 
