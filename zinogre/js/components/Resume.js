@@ -15,22 +15,21 @@ class Resume extends React.Component {
 
 	render() {
 		return (
-			
-		<div>
-		<nav>
-			<ul>
-				<li>
-					<Link to="/resume/parse"> Parse </Link>
-				</li>
-				<li>
-					<Link to="/resume/list"> List </Link>
-				</li>
-			</ul>
-		</nav>
-		<Route path="/resume" exact component={ResumeHome} />
-		<Route path="/resume/parse" component={ParsePage} />
-		<Route path="/resume/list" component={ListPage} />
-	</div>
+			<div>
+				<nav>
+					<ul>
+						<li>
+							<Link to="/resume/parse"> Parse </Link>
+						</li>
+						<li>
+							<Link to="/resume/list"> List </Link>
+						</li>
+					</ul>
+				</nav>
+				<Route path="/resume" exact component={ResumeHome} />
+				<Route path="/resume/parse" component={ParsePage} />
+				<Route path="/resume/list" component={ListPage} />
+			</div>
 		);
 	}
 }

@@ -2,23 +2,22 @@ import Hello from "./Hello";
 import Resume from "./Resume";
 import Analytics from "./Analytics";
 import Search from "./Search";
-import styles from '../styles/app-stylesheet.css';
+import styles from "../styles/app-stylesheet.css";
 
 import React from "react";
 import ReactDOM from "react-dom";
 import {Route, Link} from "react-router-dom";
 
-const Index = () => ( 
-		<div>
-			<Hello username={user_info_name} userid={user_info_id}  />
-		</div> 
-	);
+const Index = () => (
+	<div>
+		<Hello username={user_info_name} userid={user_info_id} />
+	</div>
+);
 const About = () => <h2> About </h2>;
 
 const ResumePage = () => <Resume userid={user_info_id} />;
-const AnalyticsPage = () => <Analytics username={user_info_name}/>;
-const SearchPage = () => <Search username={user_info_name}/>;
-
+const AnalyticsPage = () => <Analytics username={user_info_name} />;
+const SearchPage = () => <Search username={user_info_name} />;
 
 const App = () => (
 	<div>
