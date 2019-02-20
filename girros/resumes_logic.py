@@ -16,6 +16,7 @@ from .resumes_data import Resume
 
 girros_resume_logic = Blueprint('girros_resume_logic', __name__)
 
+#TODO: use marshmallow for json 
 @girros_resume_logic.route('/api/resume/parse', methods=['POST'])
 @oidc.require_login
 def parse_resume():
